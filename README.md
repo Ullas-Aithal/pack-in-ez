@@ -1,12 +1,28 @@
-# hack
+# Pack-In-eZ
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
+PROJECT DESCRIPTION
+  * Weather based clothing forecast: We require the users to feed in your travel dates, city you are traveling to, age, gender and flight details. Once we have these inputs, the program will open to a 5 day weather forecast  in the city you are traveling to and suggest appropriate clothing for when they arrive. 
+  * Packing list: There is also a ready clothing list available for Men, Women, Children, A toiletry list and a list for essentials. This can be used regardless of the weather condition and can be customized to one’s needs. 
+  * Flight information: Using your flight inputs we show you the baggage allowance for your airlines. This would help you to plan your luggage well and avoid paying for more baggage allowance. 
+ * Reduce stress: The ultimatum of this web based application is to help reduce travel stress, primarily for ‘Packing’. 
 
-## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+## USAGE
+  * USAGE EXAMPLE
+  
+## BUILD/INSTALLATION INSTRUCTIONS
+  * Download and install npm from the command line
+  * Install yeoman
+    * npm install -g grunt-cli bower yo generator-karma generator-angular
+  * Download the source code of this repo
+  * Run the grunt server from the root of the folder
+     * grunt serve
 
-## Testing
+## OTHER SOURCES OF DOCUMENTATION
+* https://openweathermap.org/api
+* https://sandbox.amadeus.com/ 
 
-Running `grunt test` will run the unit tests with karma.
+## Contributor Guide
+[LINK TO CONTRIBUTING.md]
+
+## License 
