@@ -70,6 +70,9 @@ body {
   margin-left: 0px !important;
   margin-right: 0px !important;
 }
+.box-shadow{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
