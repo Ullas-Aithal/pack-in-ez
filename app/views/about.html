@@ -1,3 +1,4 @@
+
 <div class="panel panel-default">
     <div class="panel-heading">Weather</div>
         <div class="panel-body">
@@ -9,6 +10,7 @@
                     <p ng-data="weatherDate">{{weatherDate[0]}}</p>
                     <p ng-data="weatherMain" style="font-weight:bold">{{weatherMain[0]}}</p>
                     <p ng-data="weatherDesc">{{weatherDesc[0]}}</p>
+                    <button type="button" class="btn btn-primary" style="width:100%" ng-click="selectWeather(0)">Show</button>
 
                 </td>
                 <td class="col-md-2">
@@ -17,6 +19,7 @@
                     <p ng-data="weatherDate">{{weatherDate[1]}}</p>
                     <p ng-data="weatherMain" style="font-weight:bold">{{weatherMain[1]}}</p>
                     <p ng-data="weatherDesc">{{weatherDesc[1]}}</p>
+                    <button type="button" class="btn btn-primary" style="width:100%" ng-click="selectWeather(1)">Show</button>
                 </td>
                 <td class="col-md-2">
                     <img ng-src="{{weatherPic[2]}}" style="width:70px"/>
@@ -25,6 +28,7 @@
                     <p ng-data="weatherDate">{{weatherDate[2]}}</p>
                     <p ng-data="weatherMain" style="font-weight:bold">{{weatherMain[2]}}</p>
                     <p ng-data="weatherDesc">{{weatherDesc[2]}}</p>
+                    <button type="button" class="btn btn-primary" style="width:100%" ng-click="selectWeather(2)">Show</button>
                 </td>
                 <td class="col-md-2">
                     <img ng-src="{{weatherPic[3]}}" style="width:70px"/>
@@ -32,6 +36,7 @@
                     <p ng-data="weatherDate">{{weatherDate[3]}}</p>
                     <p ng-data="weatherMain" style="font-weight:bold">{{weatherMain[3]}}</p>
                     <p ng-data="weatherDesc">{{weatherDesc[3]}}</p>
+                    <button type="button" class="btn btn-primary" style="width:100%" ng-click="selectWeather(3)">Show</button>
                 </td>
                 <td class="col-md-2">
                     <img ng-src="{{weatherPic[4]}}" style="width:70px"/>
@@ -39,6 +44,7 @@
                     <p ng-data="weatherDate">{{weatherDate[4]}}</p>
                     <p ng-data="weatherMain" style="font-weight:bold">{{weatherMain[4]}}</p>
                     <p ng-data="weatherDesc">{{weatherDesc[4]}}</p>
+                    <button type="button" class="btn btn-primary" style="width:100%" ng-click="selectWeather(4)">Show</button>
             </tr>
             </table>
     </div>
@@ -50,23 +56,53 @@
             <div class="btn-group width-100">
                 <div class="row  width-100 margin-l-r-0">
                     <div class="col-md-4">
-                        <button type="button" class="btn btn-default  width-100" >For Men</button>
+                        <button type="button" class="btn btn-default  width-100" ng-click="toggleToileteries()">Toileteries</button>
                     </div>
                     <div class="col-md-4">
-                        <button type="button" class="btn btn-default  width-100" >For Women</button>
+                        <button type="button" class="btn btn-default  width-100" ng-click="toggleMustCarry()">Must Carry</button>
                     </div>
                     <div class="col-md-4">
-                        <button type="button" class="btn btn-default  width-100" >For Children</button>
+                        <button type="button" class="btn btn-default  width-100" ng-click="toggleGeneral()">General</button>
                     </div>
                 </div>
             </br>   
                 <div class="row  width-100 margin-l-r-0">            
                     <div class="col-md-4">
-                            <button type="button" class="btn btn-default  width-100" ng-show="maleFlag == 1">For Men</button>
-                            <button type="button" class="btn btn-default  width-100" ng-show="femaleFlag == 1">For Women</button>
-                            <button type="button" class="btn btn-default  width-100" ng-show="childrenFlag == 1">For Children</button>
+                            <button type="button" class="btn btn-default  width-100" ng-show="maleFlag == 1" ng-click="toggleMale()">For Men</button>
+                            <button type="button" class="btn btn-default  width-100" ng-show="femaleFlag == 1" ng-click = "toggleFemale()">For Women</button>
+                            <button type="button" class="btn btn-default  width-100" ng-show="childrenFlag == 1" ng-click = "toggleChildren()">For Children</button>
                         </div>
                 </div>    
             </div>
         </div>
 </div>
+<div class="panel panel-default" ng-show = "showToileteries == 1">
+            <div class="panel-heading">Toileteries</div>
+            <div class="panel-body">
+            </div>
+</div>
+<div class="panel panel-default"  ng-show = "showMustCarry == 1">
+        <div class="panel-heading">Must Carry</div>
+        <div class="panel-body">
+        </div>
+</div>
+<div class="panel panel-default" ng-show = "showGeneral == 1">
+        <div class="panel-heading">General</div>
+        <div class="panel-body">
+        </div>
+</div>
+<div class="panel panel-default" ng-show="maleFlag == 1 && showMalePanel == 1">
+        <div class="panel-heading">Men Outfits</div>
+        <div class="panel-body">
+        </div>
+    </div>
+    <div class="panel panel-default" ng-show="femaleFlag == 1 && showFemalePanel == 1">
+            <div class="panel-heading">Women Outfits</div>
+            <div class="panel-body">
+            </div>
+    </div>
+    <div class="panel panel-default" ng-show="childrenFlag == 1 && showChildrenPanel == 1">
+            <div class="panel-heading">Children Outfits</div>
+            <div class="panel-body">
+            </div>
+    </div>

@@ -24,6 +24,13 @@ angular.module('hackApp')
     $scope.maleFlag = 0;
     $scope.childrenFlag = 0;
     $scope.femaleFlag = 0;
+    $scope.showMalePanel = 0;
+    $scope.showFemalePanel = 0;
+    $scope.showChildrenPanel = 0;
+    $scope.showToileteries = 0;
+    $scope.showMustCarry = 0;
+    $scope.showGeneral = 0;
+    $scope.selectedWeather = 0;
     if($rootScope.gender == "male"){
       $scope.maleFlag = 1;
     }
@@ -32,6 +39,30 @@ angular.module('hackApp')
     }
     else if(Number($rootScope.age) <= 18){
       $scope.childrenFlag = 1;
+    }
+
+    $scope.toggleMale = function(){
+        $scope.showMalePanel = !($scope.showMalePanel);
+    }
+    $scope.toggleFemale = function(){
+      $scope.showFemalePanel = !($scope.showfemalePanel);
+    }
+    $scope.toggleChildren = function(){
+      $scope.showChildrenPanel = !($scope.showChildrenPanel);
+    }
+    $scope.toggleToileteries = function(){
+      $scope.showToileteries = !($scope.showToileteries);
+      console.log("Tooiletreies", $scope.showToileteries);
+    }
+    $scope.toggleMustCarry = function(){
+      $scope.showMustCarry = !($scope.showMustCarry);
+    }
+    $scope.toggleGeneral = function(){
+      $scope.showGeneral = !($scope.showGeneral);
+    }
+    $scope.selectWeather = function(selectedW){
+      $scope.selectedWeather = selectedW;
+      console.log("Selected Weather", $scope.selectedWeather);
     }
     
 
