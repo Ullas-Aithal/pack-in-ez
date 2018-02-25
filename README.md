@@ -23,6 +23,7 @@ PROJECT DESCRIPTION
 * https://sandbox.amadeus.com/ 
 
 ## Contributor Guide
-[LINK TO CONTRIBUTING.md]
+[LINK TO CONTRIBUTING.md](/CONTRIBUTING.md)
 
 ## License 
+[LINK TO CONTRIBUTING.md](/LICENSE)
