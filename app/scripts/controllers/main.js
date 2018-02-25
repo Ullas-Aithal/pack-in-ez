@@ -17,7 +17,7 @@ angular.module('hackApp')
     $scope.abc = "text";
     $scope.zipCode = "60616";
     $scope.name = null;
-    $scope.gender = null;
+    $scope.gender = "Select";
     $scope.age = null;
     $scope.sourceCity = null;
     $scope.sourceZipCode = null;
@@ -28,8 +28,9 @@ angular.module('hackApp')
     $scope.arrivalDate = null;
     $scope.status = 0;
     $scope.flightNumbers = [];
-    $scope.selectedFlight = null;
+    $scope.selectedFlight = "Select a flight from the list";
     $scope.searched = 1;
+    $scope.pressed = 0;
     // var Weather = $resource('api.openweathermap.org/data/2.5/forecast?zip=60616&APPID=9c8e3a6d6f23e6fa92ad1c8265f49868');
     // var weather = Weather.query(function(){
     //     $scope.weatherResponse = weather;
@@ -78,6 +79,7 @@ angular.module('hackApp')
 
         $scope.status = 0;
         $scope.searched = 0;
+        $scope.pressed = 1;
         
       }, function errorCallback(response) {
         console.log("failed",response);
@@ -89,8 +91,13 @@ angular.module('hackApp')
 
     
   }
-  $scope.selectedFlight = function(flight){
+  $scope.setSelectedFlight = function(flight){
     $scope.selectedFlight = flight;
+  }
+
+  $scope.selectGender = function(gender){
+    $scope.gender = gender;
+    console.log("Gender",gender);
   }
 
    

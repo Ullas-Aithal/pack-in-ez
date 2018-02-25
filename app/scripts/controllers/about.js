@@ -21,6 +21,36 @@ angular.module('hackApp')
     $scope.womenClothes = [];
     $scope.womenToiletries = [];
     $scope.womenEssentials = [];
+    $scope.weatherType = null;
+
+    $scope.menClothesSunny = [];
+    $scope.menToiletriesSunny = [];
+    $scope.menEssentialsSunny = [];
+    $scope.womenClothesSunny = [];
+    $scope.womenToiletriesSunny = [];
+    $scope.womenEssentialsSunny = [];
+    
+    $scope.menClothesRainy = [];
+    $scope.menToiletriesRainy = [];
+    $scope.menEssentialsRainy = [];
+    $scope.womenClothesRainy = [];
+    $scope.womenToiletriesRainy = [];
+    $scope.womenEssentialsRainy = [];
+    
+    $scope.menClothesSnow = [];
+    $scope.menToiletriesSnow = [];
+    $scope.menEssentialsSnow = [];
+    $scope.womenClothesSnow = [];
+    $scope.womenToiletriesSnow = [];
+    $scope.womenEssentialsSnow = [];
+    
+    $scope.menClothesAll = [];
+    $scope.menToiletriesAll = [];
+    $scope.menEssentialsAll = [];
+    $scope.womenClothesAll = [];
+    $scope.womenToiletriesAll = [];
+    $scope.womenEssentialsAll = [];
+    
     $scope.commonClothes = [];
     $scope.commonToiletries = [];
     $scope.commonMustCarry = [];
@@ -28,67 +58,80 @@ angular.module('hackApp')
       {
         "Clothing": "Undershirts",
         "Toiletries": "Toothbrush and toothpaste/tooth powder",
-        "Essentials": "Plane tickets"
+        "Essentials": "Plane tickets",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Underwear",
         "Toiletries": "Floss",
-        "Essentials": "Driver’s license"
+        "Essentials": "Driver’s license",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Pajamas",
         "Toiletries": "Mouthwash",
-        "Essentials": "Passport"
+        "Essentials": "Passport",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Socks",
         "Toiletries": "Comb",
-        "Essentials": "Camera"
+        "Essentials": "Camera",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "T-shirts",
         "Toiletries": "Brylcreeme",
-        "Essentials": "Sunglasses"
+        "Essentials": "Sunglasses",
+        "Weather Type": "Sunny"
       },
       {
         "Clothing": "Dress shirts",
         "Toiletries": "Shave soap",
-        "Essentials": "Prescription medicine"
+        "Essentials": "Prescription medicine",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Dress slacks",
         "Toiletries": "Razor",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Suit/Sport coat",
         "Toiletries": "Brush",
-        "Essentials": ""
+        "Essentials": "", 
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Jeans/Khakis",
         "Toiletries": "Shampoo (or a shampoo bar if you want to avoid the hassle of airport security)",
-        "Essentials": ""
+        "Essentials": "", 
+        "Weather Type": "Sunny"
       },
       {
         "Clothing": "Dress shoes",
         "Toiletries": "Soap",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Tennis shoes",
         "Toiletries": "Deodorant",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Tie",
         "Toiletries": "",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Belt",
         "Toiletries": "",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "All type"
       }
      ];
 
@@ -96,72 +139,86 @@ angular.module('hackApp')
       {
         "Clothing": "Sunglasses",
         "Toiletries": "Sun-tan lotion",
-        "Essentials": "Plane tickets"
+        "Essentials": "Plane tickets",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Socks",
         "Toiletries": "Single pack of laundry soap",
-        "Essentials": "Driver’s license"
+        "Essentials": "Driver’s license",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Underwear",
         "Toiletries": "Lip balm",
-        "Essentials": "Passport"
+        "Essentials": "Passport",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Dirty-clothes bag",
         "Toiletries": "All meds (allergy, potential disease, ibuprofen)",
-        "Essentials": "Camera"
+        "Essentials": "Camera",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Tennis shoes",
         "Toiletries": "Shampoo, face wash,",
-        "Essentials": "Sunglasses"
+        "Essentials": "Sunglasses",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Casual shoes",
         "Toiletries": "Lotion",
-        "Essentials": "Prescription medicine"
+        "Essentials": "Prescription medicine",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Flip flops",
         "Toiletries": "Razor",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Pajamas",
         "Toiletries": "Deodorant",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Long-sleeve undershirt",
         "Toiletries": "Hair brush, hair gel",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Tank tops to layer",
         "Toiletries": "Washcloth, medium towel",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "Sunny"
       },
       {
         "Clothing": "Light jacket/rain jacket",
         "Toiletries": "Earplugs",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "Rainy"
       },
       {
         "Clothing": "Cotton shirts",
         "Toiletries": "Makeup",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "Sunny"
       },
       {
         "Clothing": "Jeans",
         "Toiletries": "Feminine items",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "All type"
       },
       {
         "Clothing": "Light-weight pants or shorts",
         "Toiletries": "",
-        "Essentials": ""
+        "Essentials": "",
+        "Weather Type": "Sunny"
       }
      ];
 
@@ -171,20 +228,68 @@ angular.module('hackApp')
 
 
      $scope.menReq.forEach(element => {
-       if(element["Clothing"] !="")
-       $scope.menClothes.push(element["Clothing"]);
-       if(element["Toiletries"] !="")
+
+
+
+       if(element["Clothing"] !="" && element["Weather Type"] == "Sunny")
+       $scope.menClothesSunny.push(element["Clothing"]);
+       if(element["Toiletries"] !="" && element["Weather Type"] == "Sunny")
        $scope.menToiletries.push(element["Toiletries"]);
-       if(element["Essentials"] !="")
+       if(element["Essentials"] !="" && element["Weather Type"] == "Sunny")
        $scope.menEssentials.push(element["Essentials"]);
+
+       if(element["Clothing"] !="" && element["Weather Type"] == "Rainy")
+       $scope.menClothesRainy.push(element["Clothing"]);
+       if(element["Toiletries"] !="" && element["Weather Type"] == "Rainy")
+       $scope.menToiletries.push(element["Toiletries"]);
+       if(element["Essentials"] !="" && element["Weather Type"] == "Rainy")
+       $scope.menEssentials.push(element["Essentials"]);
+
+       if(element["Clothing"] !="" && element["Weather Type"] == "Snow")
+       $scope.menClothesSnow.push(element["Clothing"]);
+       if(element["Toiletries"] !="" && element["Weather Type"] == "Snow")
+       $scope.menToiletries.push(element["Toiletries"]);
+       if(element["Essentials"] !="" && element["Weather Type"] == "Snow")
+       $scope.menEssentials.push(element["Essentials"]);
+
+       if(element["Clothing"] !="" && element["Weather Type"] == "All Type")
+       $scope.menClothesAll.push(element["Clothing"]);
+       if(element["Toiletries"] !="" && element["Weather Type"] == "All Type")
+       $scope.menToiletries.push(element["Toiletries"]);
+       if(element["Essentials"] !="" && element["Weather Type"] == "All Type")
+       $scope.menEssentials.push(element["Essentials"]);
+
+
+       
      });
 
      $scope.womenReq.forEach(element => {
-      if(element["Clothing"] !="")
-      $scope.womenClothes.push(element["Clothing"]);
-      if(element["Toiletries"] !="")
+      if(element["Clothing"] !="" && element["Weather Type"] == "Sunny")
+      $scope.womenClothesSunny.push(element["Clothing"]);
+      if(element["Toiletries"] !="" && element["Weather Type"] == "Sunny")
       $scope.womenToiletries.push(element["Toiletries"]);
-      if(element["Essentials"] !="")
+      if(element["Essentials"] !="" && element["Weather Type"] == "Sunny")
+      $scope.womenEssentials.push(element["Essentials"]);
+
+      if(element["Clothing"] !="" && element["Weather Type"] == "Rainy")
+      $scope.womenClothesRainy.push(element["Clothing"]);
+      if(element["Toiletries"] !="" && element["Weather Type"] == "Rainy")
+      $scope.womenToiletries.push(element["Toiletries"]);
+      if(element["Essentials"] !="" && element["Weather Type"] == "Rainy")
+      $scope.womenEssentials.push(element["Essentials"]);
+
+      if(element["Clothing"] !="" && element["Weather Type"] == "Snow")
+      $scope.womenClothesSnow.push(element["Clothing"]);
+      if(element["Toiletries"] !="" && element["Weather Type"] == "Snow")
+      $scope.womenToiletries.push(element["Toiletries"]);
+      if(element["Essentials"] !="" && element["Weather Type"] == "Snow")
+      $scope.womenEssentials.push(element["Essentials"]);
+
+      if(element["Clothing"] !="" && element["Weather Type"] == "All Type")
+      $scope.womenClothesAll.push(element["Clothing"]);
+      if(element["Toiletries"] !="" && element["Weather Type"] == "All Type")
+      $scope.womenToiletries.push(element["Toiletries"]);
+      if(element["Essentials"] !="" && element["Weather Type"] == "All Type")
       $scope.womenEssentials.push(element["Essentials"]);
     });
     
@@ -218,8 +323,11 @@ angular.module('hackApp')
     $scope.oTerminal;
     $scope.dest;
     $scope.oDest;
-    $scope.operating_airline;    
-    if($rootScope.gender == "male"){
+    $scope.operating_airline;  
+    
+    
+    var initialize = function(){
+      if($rootScope.gender == "male"){
       $scope.maleFlag = 1;
       $scope.commonClothes = $scope.menClothes;
       $scope.commonToiletries = $scope.menToiletries;
@@ -235,6 +343,8 @@ angular.module('hackApp')
     else if(Number($rootScope.age) <= 18){
       $scope.childrenFlag = 1;
     }
+  }
+  initialize();
 
     $scope.toggleMale = function(){
         $scope.showMalePanel = !($scope.showMalePanel);
@@ -256,6 +366,37 @@ angular.module('hackApp')
     }
     $scope.selectWeather = function(selectedW){
       $scope.selectedWeather = selectedW;
+      console.log("Selected Weather", $scope.weatherMain[selectedW]);
+      if($scope.weatherMain[selectedW] == "Rain"){
+        $scope.weatherType = "Rain"
+        $scope.menClothes = $scope.menClothesRainy;
+        // $scope.menToiletries = $scope.menClothesRainy;
+        // $scope.menEssentials = $scope.menClothesRainy;
+        $scope.womenClothes = $scope.womenClothesRainy;
+        // $scope.womenToiletries = $scope.womenClothesRainy;
+        // $scope.womenEssentials = $scope.womenClothesRainy;
+
+      }
+      else if($scope.weatherMain[selectedW] == "Clear"){
+        $scope.weatherType = "Clear"
+        console.log("Cleary", $scope.menClothesSunny);
+        $scope.menClothes = $scope.menClothesSunny;
+        // $scope.menToiletries = $scope.menClothesSunny;
+        // $scope.menEssentials = $scope.menClothesSunny;
+        $scope.womenClothes = $scope.womenClothesSunny;
+        // $scope.womenToiletries = $scope.womenClothesSunny;
+        // $scope.womenEssentials = $scope.womenClothesSunny;
+      } 
+      else if($scope.weatherMain[selectedW] == "Snow"){
+        $scope.weatherType = "Snow"
+        // $scope.menClothes = $scope.menClothesSnow;
+        // $scope.menToiletries = $scope.menClothesSnow;
+        $scope.menEssentials = $scope.menClothesSnow;
+        // $scope.womenClothes = $scope.womenClothesSnow;
+        // $scope.womenToiletries = $scope.womenClothesSnow;
+        $scope.womenEssentials = $scope.womenClothesSnow;
+      }
+      initialize();
     }
     
 
