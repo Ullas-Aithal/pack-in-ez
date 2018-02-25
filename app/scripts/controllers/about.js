@@ -8,7 +8,7 @@
  * Controller of the hackApp
  */
 angular.module('hackApp')
-  .controller('AboutCtrl', function ($scope, $http) {
+  .controller('AboutCtrl', function ($scope, $http, $rootScope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -20,13 +20,14 @@ angular.module('hackApp')
     $scope.weatherMain = [];
     $scope.weatherDesc = [];
     $scope.weatherPic = [];
+    console.log("From Main", $rootScope.zipCode);
 
     $http({
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
       },
-      url: 'https://api.openweathermap.org/data/2.5/forecast?zip=60616&units=imperial&APPID=9c8e3a6d6f23e6fa92ad1c8265f49868'
+      url: 'https://api.openweathermap.org/data/2.5/forecast?zip=' + $rootScope.zipCode+ '&units=imperial&APPID=9c8e3a6d6f23e6fa92ad1c8265f49868'
     }).then(function successCallback(response) {
         var prevElement = null;
         response.data["list"].forEach(element => {
