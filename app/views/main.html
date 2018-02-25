@@ -32,14 +32,6 @@
             <div class="panel-heading">Trip Details</div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-12">
-                  <div class="input-group input-type-width-100">
-                      <input type="text" class="form-control" placeholder="Flight Number" aria-describedby="basic-addon1" ng-model="flightNumber">
-                    </div>  
-                </div>
-              </div>
-            </br>
-              <div class="row">
                   <div class="col-md-6">
                       <div class="input-group input-type-width-100">
                           <input type="datetime" class="form-control" placeholder="Departure Date" aria-describedby="basic-addon1" ng-model="departureDate">
@@ -72,6 +64,25 @@
                       <div class="input-group">
                           <input type="text" class="form-control" placeholder="Zip Code" aria-describedby="basic-addon1" ng-model="destinationZipCode">
                       </div>
+                  </div>
+                </div>
+              </br>
+              <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                  <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-primary" ng-click="getFlights()" ng-disabled = "status == 1">Get Flights</button>
+                  </div>
+                </div>
+              </br>
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="dropdown">
+                          <button ng-disabled="searched == 1" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" > Click on Get Flights 
+                              <span class="caret"></span></button>
+                          <ul class="dropdown-menu" aria-labelledby="dLabel">
+                              <li ng-repeat="flight in flightNumbers"  style="list-style: none; padding:5px">
+                                  <a ng-click="selectedFlight(flight)">{{flight}}</a><hr></li>
+                          </ul>
+                          </div>  
                   </div>
                 </div>
               </div>

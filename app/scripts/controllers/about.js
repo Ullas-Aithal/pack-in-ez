@@ -14,6 +14,7 @@ angular.module('hackApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.status = 1;
     $scope.menClothes = [];
     $scope.menToiletries = [];
     $scope.menEssentials = [];
@@ -186,11 +187,11 @@ angular.module('hackApp')
       if(element["Essentials"] !="")
       $scope.womenEssentials.push(element["Essentials"]);
     });
-     console.log("WClothing", $scope.womenClothes);
+    
 
 
 
-     console.log($scope.menReq[0]);
+
 
     $scope.weatherDate = [];
     $scope.weatherFaranheit = [];
@@ -208,6 +209,16 @@ angular.module('hackApp')
     $scope.showMustCarry = 0;
     $scope.showGeneral = 0;
     $scope.selectedWeather = 0;
+    $scope.departs_at;
+    $scope.arrives_at;
+    $scope.aircraft;
+    $scope.travel_class;
+    $scope.seats_remaining;
+    $scope.origin;
+    $scope.oTerminal;
+    $scope.dest;
+    $scope.oDest;
+    $scope.operating_airline;    
     if($rootScope.gender == "male"){
       $scope.maleFlag = 1;
       $scope.commonClothes = $scope.menClothes;
@@ -245,7 +256,6 @@ angular.module('hackApp')
     }
     $scope.selectWeather = function(selectedW){
       $scope.selectedWeather = selectedW;
-      console.log("Selected Weather", $scope.selectedWeather);
     }
     
 
@@ -281,13 +291,78 @@ angular.module('hackApp')
             prevElement = element;
           }
         });
-        
+        $scope.getFlights();
       }, function errorCallback(response) {
         console.log("failed",response);
         // called asynchronously if an error occurs
         // or server returns response with an error status.
       });
-      console.log("Male", $rootScope.gender);
+    
+
+      $scope.getFlights = function(){
+        
+              $scope.status = 1 ;
+            $http({
+              method: 'GET',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              url: 'https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?apikey=TlxyNRn5PAJrZKgHPKcEiANnnTVhs7vL&origin=' + $rootScope.sourceCity + '&destination=' + $rootScope.destinationCity + '&departure_date=' + $rootScope.departureDate
+            }).then(function successCallback(response) {
+        
+              console.log(response.data);
+              response.data["results"].forEach(element => {
+                // if(element["itineraries"][0]["outbound"]["flights"][0]["flight_number"] != "")
+                // {
+                //   $scope.flightNumbers.push(element["itineraries"][0]["outbound"]["flights"][0]["flight_number"]);
+                //   console.log("flight id", element["itineraries"][0]["outbound"]["flights"][0]["flight_number"]);
+                //   $scope.flightNumbers = [...new Set($scope.flightNumbers)];
+                // }
+                if(element["itineraries"][0]["outbound"]["flights"][0]["flight_number"] == $rootScope.selectedFlight)
+                {
+                  var temp = element["itineraries"][0]["outbound"]["flights"][0];
+                  $scope.departs_at = temp["departs_at"];
+                  $scope.arrives_at = temp["arrives_at"];
+                  $scope.aircraft = temp["aircraft"];
+                  $scope.travel_class = temp["booking_info"]["travel_class"];
+                  $scope.seats_remaining = temp["booking_info"]["seats_remaining"];
+                  $scope.origin = temp["origin"]["airport"];
+                  $scope.oTerminal = temp["origin"]["terminal"];
+                  $scope.dest = temp["destination"]["airport"];
+                  $scope.oDest = temp["destination"]["terminal"];
+                  $scope.operating_airline  = temp["operating_airline"];
+
+
+                  console.log("Result", $scope.departs_at + 
+                  $scope.arrives_at +
+                  $scope.aircraft +
+                  $scope.travel_class +
+                  $scope.seats_remaining +
+                  $scope.origin +
+                  $scope.oTerminal +
+                  $scope.dest +
+                  $scope.oDest +
+                  $scope.operating_airline );
+
+                  console.log(element["itineraries"][0]["outbound"]["flights"][0]["flight_number"]);
+                }
+              });
+                
+        
+                
+                $scope.searched = 0;
+                $scope.status = 0;
+                
+              }, function errorCallback(response) {
+                console.log("failed",response);
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+              });
+        
+        
+        
+            
+          }
       
               
 

@@ -51,7 +51,7 @@
 </div>  
 
 <div class="panel panel-default">
-        <div class="panel-heading">Your</div>
+        <div class="panel-heading">Your Choices</div>
         <div class="panel-body">
             <div class="btn-group width-100">
                 <div class="row  width-100 margin-l-r-0">
@@ -62,7 +62,7 @@
                         <button type="button" class="btn btn-default  width-100" ng-click="toggleMustCarry()">Must Carry</button>
                     </div>
                     <div class="col-md-4">
-                        <button type="button" class="btn btn-default  width-100" ng-click="toggleGeneral()">General</button>
+                        <button type="button" class="btn btn-default  width-100" ng-click="toggleGeneral()" ng-disabled="status == 1">General</button>
                     </div>
                 </div>
             </br>   
@@ -95,6 +95,80 @@
 <div class="panel panel-default" ng-show = "showGeneral == 1">
         <div class="panel-heading">General</div>
         <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Deprature Time</h4>
+                </div>
+                <div class="col-md-3">
+                    <h4>Deprature</h4>
+                </div>
+                <div class="col-md-3">
+                    <h4>Arrival Time</h4>
+                </div>
+                <div class="col-md-3">
+                    <h4>Arrival</h4>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-3">
+                        <h5>{{departs_at}}</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>{{origin}}</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>{{arrives_at}}</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>{{dest}}</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        Terminal:
+                    </div>
+                    <div class="col-md-3">
+                        {{oTerminal}}
+                    </div>
+                
+                <div class="col-md-3">
+                        Terminal:
+                    </div>
+                    <div class="col-md-3">
+                        {{oDest}}
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-3">
+                            Aircraft:
+                        </div>
+                        <div class="col-md-3">
+                            {{aircraft}}
+                        </div>
+                    
+                    <div class="col-md-3">
+                            Operating Airline:
+                        </div>
+                        <div class="col-md-3">
+                            {{operating_airline}}
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-3">
+                                Travel Class:
+                            </div>
+                            <div class="col-md-3">
+                                {{travel_class}}
+                            </div>
+                        
+                        <div class="col-md-3">
+                                Seats Remaining:
+                            </div>
+                            <div class="col-md-3">
+                                {{seats_remaining}}
+                            </div>
+                        </div>
+            </div>
         </div>
 </div>
 <div class="panel panel-default" ng-show="maleFlag == 1 && showMalePanel == 1">
