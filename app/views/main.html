@@ -5,48 +5,84 @@
 <div class="panel panel-default">
     <div class="panel-heading">Trip Details</div>
     <div class="panel-body">
-      <div class="row">
-        <div class="col-md-4">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1">
-              </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Age" aria-describedby="basic-addon1">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Gender" aria-describedby="basic-addon1">
-            </div>
-        </div>
-      </div>
-    </br>
-      <div class="row">
-          <div class="col-md-4">
-              <div class="input-group">
-                  <input type="datetime" class="form-control" placeholder="Departure" aria-describedby="basic-addon1">
+        <div class="panel panel-default">
+            <div class="panel-heading">Personal Information</div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="name">
+                      </div>
                 </div>
-          </div>
-          <div class="col-md-4">
-              <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Age" aria-describedby="basic-addon1" ng-model="age">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Gender" aria-describedby="basic-addon1" ng-model="gender">
+                    </div>
+                </div>
               </div>
+            </div>
           </div>
-          <div class="col-md-4">
-              <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            </br>
+          <div class="panel panel-default">
+            <div class="panel-heading">Trip Details</div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="input-group input-type-width-100">
+                      <input type="text" class="form-control" placeholder="Flight Number" aria-describedby="basic-addon1" ng-model="flightNumber">
+                    </div>  
+                </div>
               </div>
-          </div>
-        </div>
+            </br>
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="input-group input-type-width-100">
+                          <input type="datetime" class="form-control" placeholder="Departure Date" aria-describedby="basic-addon1" ng-model="departureDate">
+                        </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="input-group input-type-width-100">
+                          <input type="datetime" class="form-control" placeholder="Arrival Date" aria-describedby="basic-addon1" ng-model="arrivalDate">
+                      </div>
+                  </div>
+                </div>
+              </br>
+                <div class="row">
+                  <div class="col-md-3">
+                      <div class="input-group">
+                          <input type="datetime" class="form-control" placeholder="From" aria-describedby="basic-addon1" ng-model="sourceCity">
+                        </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="input-group">
+                          <input type="datetime" class="form-control" placeholder="Zip Code" aria-describedby="basic-addon1" ng-model="sourceZipCode">
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="input-group">
+                          <input type="text" class="form-control" placeholder="To" aria-describedby="basic-addon1" ng-model="destinationCity">
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Zip Code" aria-describedby="basic-addon1" ng-model="destinationZipCode">
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
       </br>
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-success">Left</button>
+              <a href="#!/about"><button type="button" class="btn btn-success" ng-click="copyDataToRootScope()">Next</button></a>
           </div>
         </div>
-        <a href="#!/about">About</a></li>
+        
     </div>
 </div>
 

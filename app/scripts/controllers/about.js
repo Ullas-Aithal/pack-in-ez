@@ -20,14 +20,27 @@ angular.module('hackApp')
     $scope.weatherMain = [];
     $scope.weatherDesc = [];
     $scope.weatherPic = [];
-    console.log("From Main", $rootScope.zipCode);
+    $scope.flag = 0;
+    $scope.maleFlag = 0;
+    $scope.childrenFlag = 0;
+    $scope.femaleFlag = 0;
+    if($rootScope.gender == "male"){
+      $scope.maleFlag = 1;
+    }
+    else if($rootScope.gender == "female"){
+      $scope.femaleFlag = 1;
+    }
+    else if(Number($rootScope.age) <= 18){
+      $scope.childrenFlag = 1;
+    }
+    
 
     $http({
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
       },
-      url: 'https://api.openweathermap.org/data/2.5/forecast?zip=' + $rootScope.zipCode+ '&units=imperial&APPID=9c8e3a6d6f23e6fa92ad1c8265f49868'
+      url: 'https://api.openweathermap.org/data/2.5/forecast?zip=' + $rootScope.destinationZipCode+ '&units=imperial&APPID=9c8e3a6d6f23e6fa92ad1c8265f49868'
     }).then(function successCallback(response) {
         var prevElement = null;
         response.data["list"].forEach(element => {
@@ -54,13 +67,16 @@ angular.module('hackApp')
             prevElement = element;
           }
         });
-        console.log("Total Date",$scope.weatherDate);
-        console.log("Total Temp",$scope.weatherFaranheit);
-        console.log("Total type",$scope.weatherMain);
-        console.log("Total Des",$scope.weatherDesc);
+        
       }, function errorCallback(response) {
         console.log("failed",response);
         // called asynchronously if an error occurs
         // or server returns response with an error status.
       });
+      console.log("Male", $rootScope.gender);
+      
+              
+
+    
+
   });
