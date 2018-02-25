@@ -14,6 +14,183 @@ angular.module('hackApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.menClothes = [];
+    $scope.menToiletries = [];
+    $scope.menEssentials = [];
+    $scope.womenClothes = [];
+    $scope.womenToiletries = [];
+    $scope.womenEssentials = [];
+    $scope.commonClothes = [];
+    $scope.commonToiletries = [];
+    $scope.commonMustCarry = [];
+    $scope.menReq = [
+      {
+        "Clothing": "Undershirts",
+        "Toiletries": "Toothbrush and toothpaste/tooth powder",
+        "Essentials": "Plane tickets"
+      },
+      {
+        "Clothing": "Underwear",
+        "Toiletries": "Floss",
+        "Essentials": "Driver’s license"
+      },
+      {
+        "Clothing": "Pajamas",
+        "Toiletries": "Mouthwash",
+        "Essentials": "Passport"
+      },
+      {
+        "Clothing": "Socks",
+        "Toiletries": "Comb",
+        "Essentials": "Camera"
+      },
+      {
+        "Clothing": "T-shirts",
+        "Toiletries": "Brylcreeme",
+        "Essentials": "Sunglasses"
+      },
+      {
+        "Clothing": "Dress shirts",
+        "Toiletries": "Shave soap",
+        "Essentials": "Prescription medicine"
+      },
+      {
+        "Clothing": "Dress slacks",
+        "Toiletries": "Razor",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Suit/Sport coat",
+        "Toiletries": "Brush",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Jeans/Khakis",
+        "Toiletries": "Shampoo (or a shampoo bar if you want to avoid the hassle of airport security)",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Dress shoes",
+        "Toiletries": "Soap",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Tennis shoes",
+        "Toiletries": "Deodorant",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Tie",
+        "Toiletries": "",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Belt",
+        "Toiletries": "",
+        "Essentials": ""
+      }
+     ];
+
+     $scope.womenReq = [
+      {
+        "Clothing": "Sunglasses",
+        "Toiletries": "Sun-tan lotion",
+        "Essentials": "Plane tickets"
+      },
+      {
+        "Clothing": "Socks",
+        "Toiletries": "Single pack of laundry soap",
+        "Essentials": "Driver’s license"
+      },
+      {
+        "Clothing": "Underwear",
+        "Toiletries": "Lip balm",
+        "Essentials": "Passport"
+      },
+      {
+        "Clothing": "Dirty-clothes bag",
+        "Toiletries": "All meds (allergy, potential disease, ibuprofen)",
+        "Essentials": "Camera"
+      },
+      {
+        "Clothing": "Tennis shoes",
+        "Toiletries": "Shampoo, face wash,",
+        "Essentials": "Sunglasses"
+      },
+      {
+        "Clothing": "Casual shoes",
+        "Toiletries": "Lotion",
+        "Essentials": "Prescription medicine"
+      },
+      {
+        "Clothing": "Flip flops",
+        "Toiletries": "Razor",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Pajamas",
+        "Toiletries": "Deodorant",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Long-sleeve undershirt",
+        "Toiletries": "Hair brush, hair gel",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Tank tops to layer",
+        "Toiletries": "Washcloth, medium towel",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Light jacket/rain jacket",
+        "Toiletries": "Earplugs",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Cotton shirts",
+        "Toiletries": "Makeup",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Jeans",
+        "Toiletries": "Feminine items",
+        "Essentials": ""
+      },
+      {
+        "Clothing": "Light-weight pants or shorts",
+        "Toiletries": "",
+        "Essentials": ""
+      }
+     ];
+
+
+
+
+
+
+     $scope.menReq.forEach(element => {
+       if(element["Clothing"] !="")
+       $scope.menClothes.push(element["Clothing"]);
+       if(element["Toiletries"] !="")
+       $scope.menToiletries.push(element["Toiletries"]);
+       if(element["Essentials"] !="")
+       $scope.menEssentials.push(element["Essentials"]);
+     });
+
+     $scope.womenReq.forEach(element => {
+      if(element["Clothing"] !="")
+      $scope.womenClothes.push(element["Clothing"]);
+      if(element["Toiletries"] !="")
+      $scope.womenToiletries.push(element["Toiletries"]);
+      if(element["Essentials"] !="")
+      $scope.womenEssentials.push(element["Essentials"]);
+    });
+     console.log("WClothing", $scope.womenClothes);
+
+
+
+     console.log($scope.menReq[0]);
 
     $scope.weatherDate = [];
     $scope.weatherFaranheit = [];
@@ -33,9 +210,16 @@ angular.module('hackApp')
     $scope.selectedWeather = 0;
     if($rootScope.gender == "male"){
       $scope.maleFlag = 1;
+      $scope.commonClothes = $scope.menClothes;
+      $scope.commonToiletries = $scope.menToiletries;
+      $scope.commonMustCarry = $scope.menEssentials;
+  
     }
     else if($rootScope.gender == "female"){
       $scope.femaleFlag = 1;
+      $scope.commonClothes = $scope.womenClothes;
+      $scope.commonToiletries = $scope.womenToiletries;
+      $scope.commonMustCarry = $scope.womenEssentials;
     }
     else if(Number($rootScope.age) <= 18){
       $scope.childrenFlag = 1;
@@ -52,7 +236,6 @@ angular.module('hackApp')
     }
     $scope.toggleToileteries = function(){
       $scope.showToileteries = !($scope.showToileteries);
-      console.log("Tooiletreies", $scope.showToileteries);
     }
     $scope.toggleMustCarry = function(){
       $scope.showMustCarry = !($scope.showMustCarry);
