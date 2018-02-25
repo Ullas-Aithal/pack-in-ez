@@ -5,10 +5,6 @@ PROJECT DESCRIPTION
   * Packing list: There is also a ready clothing list available for Men, Women, Children, A toiletry list and a list for essentials. This can be used regardless of the weather condition and can be customized to one’s needs. 
   * Flight information: Using your flight inputs we show you the baggage allowance for your airlines. This would help you to plan your luggage well and avoid paying for more baggage allowance. 
  * Reduce stress: The ultimatum of this web based application is to help reduce travel stress, primarily for ‘Packing’. 
-
-
-## USAGE
-  * USAGE EXAMPLE
   
 ## BUILD/INSTALLATION INSTRUCTIONS
   * Download and install npm from the command line
@@ -26,4 +22,4 @@ PROJECT DESCRIPTION
 [LINK TO CONTRIBUTING.md](/CONTRIBUTING.md)
 
 ## License 
-[LINK TO CONTRIBUTING.md](/LICENSE)
+[LICENSE](/LICENSE)
