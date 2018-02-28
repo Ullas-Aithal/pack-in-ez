@@ -25,6 +25,16 @@ Pack-In-eZ is a smart web based application that helps you pack clothing based o
   * Open your browser and type
     * http://localhost:8000/
     
+                          ##OR
+    
+  * You can directly pull the docker image and run the docker image
+  * Pull docker image
+    * docker pull ullasaithal/pac-in-ez
+  * Run the docker image
+    * docker run --name pac-in-ez -p 8000:9000 pac-in-ez:deploy
+  * Open your browser and type
+    * http://localhost:8000/
+    
 
 ## OTHER SOURCES OF DOCUMENTATION
 * https://openweathermap.org/api
