@@ -19,11 +19,11 @@ Pack-In-eZ is a smart web based application that helps you pack clothing based o
   * Clone the source code
   * Go to the directory pack-in-ez
   * Run docker build command
-    docker build -t pac-in-ez:dev .
+    * docker build -t pac-in-ez:dev .
   * Run the buildt docker image
-    docker run --name pac-in-ez -p 8000:9000 pac-in-ez:deploy
+    * docker run --name pac-in-ez -p 8000:9000 pac-in-ez:deploy
   * Open your browser and type
-    http://localhost:8000/
+    * http://localhost:8000/
     
 
 ## OTHER SOURCES OF DOCUMENTATION
