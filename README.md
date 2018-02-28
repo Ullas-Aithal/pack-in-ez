@@ -16,7 +16,7 @@ Pack-In-eZ is a smart web based application that helps you pack clothing based o
      * grunt serve
 
 ## BUILDING AND RUNNING FROM DOCKER IMAGE
-### Method 1 Build and run docker image
+### Method 1 - Build and run docker image
   * Clone the source code
   * Go to the directory pack-in-ez
   * Run docker build command
@@ -26,7 +26,7 @@ Pack-In-eZ is a smart web based application that helps you pack clothing based o
   * Open your browser and type
     * http://localhost:8000/
     
- #### Method 2 Download and run the docker image from docker hub
+ ### Method 2 - Download and run the docker image from docker hub
     
   * You can directly pull the docker image and run the docker image
   * Pull docker image
